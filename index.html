@@ -2,192 +2,345 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akarsh J Shetty | Cyber Security specialist</title>
-  <meta name="description" content="Portfolio of Akarsh J Shetty, Cyber Security Analyst ">
-  <meta name="keywords" content="Akarsh, Android App Developer, Kotlin, Java, HTML, CSS, Portfolio">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akarsh J Shetty | Cybersecurity Portfolio</title>
+  <meta name="description" content="Portfolio of Akarsh J Shetty — Cybersecurity student, LLM security researcher, and ethical hacking enthusiast.">
+  <meta name="keywords" content="Akarsh J Shetty, Cybersecurity, Security Analyst, LLM Security, Ethical Hacking, Portfolio">
   <meta name="author" content="Akarsh J Shetty">
-  <style>
-    html {
-      scroll-padding-top: 100px;
-    }
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f2f2f2;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #ff4757;
-    }
-    #hero {
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #fff;
-    }
-    #hero h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    #hero p {
-      font-size: 1.2em;
-      color: #555;
-    }
-    section {
-      margin: 50px auto;
-      max-width: 800px;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-    }
-    h2 {
-      border-bottom: 2px solid #ff4757;
-      padding-bottom: 10px;
-    }
-    .skills {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    .skill {
-      background: #ff4757;
-      color: white;
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 25px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-    .skill:hover {
-      transform: scale(1.1);
-    }
-    .project-card {
-      background-color: #f9f9f9;
-      border-left: 5px solid #ff4757;
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-    .project-card h3 {
-      margin-top: 0;
-      color: #ff4757;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    input, textarea {
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background: #ff4757;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background: #e0434e;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #fff;
-    }
-    a {
-      color: #ff4757;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-  <h1>Akarsh J Shetty</h1>
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-<section id="hero">
-  <h2>Hi, I'm Akarsh 👋</h2>
-  <p>Android App Developer | Kotlin & Java Enthusiast </p>
-</section>
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hello! I'm a passionate Android app developer. I love building things that make a difference. I have built projects using Java, Kotlin, HTML and CSS.</p>
-</section>
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">Java</div>
-    <div class="skill">Kotlin</div>
-    <div class="skill">Mobile App Development</div>
+
+<!-- Matrix Rain Background -->
+<canvas id="matrix-bg"></canvas>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <a href="#hero" class="nav-logo">
+    <span class="bracket">{</span> akarsh <span class="slash">/</span> sec <span class="bracket">}</span>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      Available for opportunities
+    </div>
+    <h1>Hi, I'm <span class="name-highlight">Akarsh J Shetty</span></h1>
+    <p class="hero-subtitle">
+      <span id="typed-text">Cybersecurity Student</span><span class="typed-cursor">|</span>
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">&#128274; View Projects</a>
+      <a href="#contact" class="btn btn-outline">&#9993; Get In Touch</a>
+    </div>
   </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project-card">
-    <h3>Portfolio Website</h3>
-    <p>Built using HTML, CSS, and JavaScript. Hosted on GitHub Pages.</p>
-  </div>
-  <div class="project-card">
-    <h3>Step Counter</h3>
-    <p>An Android app that counts the number of steps you walk using your phone's built-in sensors. Built using Java.</p>
-  </div>
-  <div class="project-card">
-    <h3>BMI Calculator</h3>
-    <p>Android app that calculates your BMI using your height and weight. Built using Kotlin.</p>
+<!-- About Section -->
+<section class="section" id="about">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Who Am I?</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-terminal animate-on-scroll">
+        <div class="terminal-header">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">akarsh@kali:~</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line"><span class="prompt">$ </span><span class="command">whoami</span></div>
+          <div class="terminal-line"><span class="output">Akarsh J Shetty</span></div>
+          <div class="terminal-line"><span class="prompt">$ </span><span class="command">cat role.txt</span></div>
+          <div class="terminal-line"><span class="output">Cybersecurity Student @ BMSIT&M</span></div>
+          <div class="terminal-line"><span class="prompt">$ </span><span class="command">cat interests.txt</span></div>
+          <div class="terminal-line"><span class="output">LLM Security | Phishing Awareness | Ethical Hacking</span></div>
+          <div class="terminal-line"><span class="prompt">$ </span><span class="command">echo $STATUS</span></div>
+          <div class="terminal-line"><span class="output">&#127919; Always learning, always hacking (ethically)</span></div>
+        </div>
+      </div>
+      <div class="about-text animate-on-scroll">
+        <p>
+          I'm a <span class="highlight">cybersecurity student</span> pursuing my MCA at BMSIT&M with a deep passion for 
+          securing digital systems. My journey bridges the gap between software development and security — from building 
+          Android applications to researching <span class="highlight">LLM prompt injection attacks</span> and building 
+          phishing awareness platforms.
+        </p>
+        <p>
+          I'm currently expanding my expertise through the <span class="highlight">CS50 Cybersecurity</span> course and 
+          working towards my <span class="highlight">ISC2 CC certification</span>. I believe in learning by building — 
+          every project is an opportunity to think like an attacker and defend like a professional.
+        </p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Internships</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p><strong>Email:</strong> shettyakarsh33@gmail.com</p>
-  <p><strong>Phone:</strong> 8147066916</p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/0wolfak0" target="_blank">github.com/0wolfak0</a></p>
+<!-- Skills Section -->
+<section class="section" id="skills">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">Technical Arsenal</h2>
+      <p class="section-subtitle">Tools and technologies I work with</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category animate-on-scroll">
+        <div class="skill-category-icon">&#128737;</div>
+        <h3 class="skill-category-title">Security &amp; Networking</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Network Security</span>
+          <span class="skill-tag">Ethical Hacking</span>
+          <span class="skill-tag">Phishing Simulation</span>
+          <span class="skill-tag">LLM Security</span>
+          <span class="skill-tag">Threat Analysis</span>
+        </div>
+      </div>
+      <div class="skill-category animate-on-scroll">
+        <div class="skill-category-icon">&#128187;</div>
+        <h3 class="skill-category-title">Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag cyan">Python</span>
+          <span class="skill-tag cyan">Java</span>
+          <span class="skill-tag cyan">Kotlin</span>
+          <span class="skill-tag cyan">JavaScript</span>
+          <span class="skill-tag cyan">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="skill-category animate-on-scroll">
+        <div class="skill-category-icon">&#128295;</div>
+        <h3 class="skill-category-title">Tools &amp; Platforms</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Kali Linux</span>
+          <span class="skill-tag">GoPhish</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">VirtualBox</span>
+          <span class="skill-tag">Git &amp; GitHub</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<footer>
-  <p>&copy; 2025 Akarsh J Shetty. All rights reserved.</p>
+
+<!-- Certifications Section -->
+<section class="section" id="certifications">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label">Certifications</div>
+      <h2 class="section-title">Credentials &amp; Learning</h2>
+      <p class="section-subtitle">Courses and certifications that shape my expertise</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card animate-on-scroll">
+        <div class="cert-icon">&#127891;</div>
+        <div class="cert-status in-progress">&#9679; In Progress</div>
+        <h3>CS50's Introduction to Cybersecurity</h3>
+        <p class="cert-org">Harvard University (edX)</p>
+      </div>
+      <div class="cert-card animate-on-scroll">
+        <div class="cert-icon">&#128272;</div>
+        <div class="cert-status in-progress">&#9679; In Progress</div>
+        <h3>Certified in Cybersecurity (CC)</h3>
+        <p class="cert-org">ISC2</p>
+      </div>
+      <div class="cert-card animate-on-scroll">
+        <div class="cert-icon">&#127942;</div>
+        <div class="cert-status completed">&#10003; Completed</div>
+        <h3>Human Computer Interaction</h3>
+        <p class="cert-org">NPTEL</p>
+        <p class="cert-score">Score: 95%</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section class="section" id="experience">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Professional Journey</h2>
+    </div>
+    <div class="timeline animate-on-scroll">
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-date">3 Months</div>
+          <h3>Cybersecurity Intern</h3>
+          <p class="company">Aitch Nu</p>
+          <p>Gained hands-on experience in cybersecurity operations, security analysis, and threat assessment methodologies in a professional environment.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-date">1 Month</div>
+          <h3>Android App Development Intern</h3>
+          <p class="company">Aspire Innovations</p>
+          <p>Built Android applications using Java and Kotlin, developing mobile development skills and software engineering fundamentals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section" id="projects">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">What I've Built</h2>
+      <p class="section-subtitle">Security tools and applications I've developed</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card animate-on-scroll">
+        <div class="project-card-header">
+          <span class="project-icon">&#128737;</span>
+          <div class="project-links">
+            <a href="https://github.com/0wolfak0/Adaptive-Deceptive-Response-Framework-for-Prompt-Injection-Attacks-on-Llms" target="_blank">GitHub &#8599;</a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <h3>LLM Security Middleware</h3>
+          <p>An adaptive deceptive response framework for prompt injection attacks on LLMs. Features a FastAPI-based security proxy with real-time threat detection, honeypot deception, semantic analysis, and a live monitoring dashboard.</p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>SQLAlchemy</span>
+            <span>LLM Security</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card animate-on-scroll">
+        <div class="project-card-header">
+          <span class="project-icon">&#127907;</span>
+          <div class="project-links">
+            <a href="https://github.com/0wolfak0" target="_blank">GitHub &#8599;</a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <h3>SecureBait — Phishing Awareness Platform</h3>
+          <p>A phishing simulation and awareness training platform using GoPhish and Postfix in an isolated Kali Linux environment. Tracks user interactions, simulates email campaigns, and generates analytics for security training.</p>
+          <div class="project-tech">
+            <span>Kali Linux</span>
+            <span>GoPhish</span>
+            <span>Postfix</span>
+            <span>VirtualBox</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card animate-on-scroll">
+        <div class="project-card-header">
+          <span class="project-icon">&#128694;</span>
+          <div class="project-links">
+            <a href="https://github.com/0wolfak0/Smart_Step" target="_blank">GitHub &#8599;</a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <h3>Smart Step</h3>
+          <p>An Android application that counts the number of steps you walk using the phone's built-in accelerometer and gyroscope sensors. Features a clean UI with daily tracking and step history.</p>
+          <div class="project-tech">
+            <span>Java</span>
+            <span>Android SDK</span>
+            <span>Sensor API</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section" id="contact">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">Have a question or want to work together?</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info animate-on-scroll">
+        <h3>Reach out to me</h3>
+        <p>I'm always open to discussing cybersecurity, collaboration opportunities, or just a good conversation about tech.</p>
+        <div class="contact-links">
+          <a href="mailto:shettyakarsh33@gmail.com" class="contact-link" id="contact-email">
+            <span class="link-icon">&#9993;</span>
+            <div>
+              <div class="link-label">Email</div>
+              <div class="link-value">shettyakarsh33@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+918147066916" class="contact-link" id="contact-phone">
+            <span class="link-icon">&#128222;</span>
+            <div>
+              <div class="link-label">Phone</div>
+              <div class="link-value">+91 8147066916</div>
+            </div>
+          </a>
+          <a href="https://github.com/0wolfak0" target="_blank" class="contact-link" id="contact-github">
+            <span class="link-icon">&#128187;</span>
+            <div>
+              <div class="link-label">GitHub</div>
+              <div class="link-value">github.com/0wolfak0</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form animate-on-scroll" id="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message &#8594;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 <span class="footer-accent">Akarsh J Shetty</span>. All rights reserved.</p>
+  </div>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
-
-
-
