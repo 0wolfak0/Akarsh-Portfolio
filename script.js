@@ -149,15 +149,45 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = '#22c55e';
+    const btn = document.getElementById('contact-submit-btn');
+    const originalText = btn.innerHTML;
+
+    // Show loading state
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        btn.textContent = '✓ Message Sent!';
+        btn.style.background = '#22c55e';
+        btn.style.opacity = '1';
+        form.reset();
+      } else {
+        btn.textContent = '✗ Failed to send';
+        btn.style.background = '#ef4444';
+        btn.style.opacity = '1';
+      }
+    } catch (error) {
+      btn.textContent = '✗ Network error';
+      btn.style.background = '#ef4444';
+      btn.style.opacity = '1';
+    }
+
     setTimeout(() => {
-      btn.textContent = 'Send Message →';
+      btn.innerHTML = originalText;
       btn.style.background = '';
-      form.reset();
+      btn.style.opacity = '';
+      btn.disabled = false;
     }, 3000);
   });
 }
