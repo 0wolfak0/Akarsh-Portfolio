@@ -159,13 +159,27 @@ function initContactForm() {
     btn.disabled = true;
     btn.style.opacity = '0.7';
 
+    // Collect form data as JSON (more reliable than FormData for CORS)
+    const data = {
+      access_key: form.querySelector('[name="access_key"]').value,
+      subject: form.querySelector('[name="subject"]').value,
+      from_name: form.querySelector('[name="from_name"]').value,
+      name: form.querySelector('#name').value,
+      email: form.querySelector('#email').value,
+      message: form.querySelector('#message').value
+    };
+
     try {
-      const formData = new FormData(form);
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
       });
       const result = await response.json();
+      console.log('Web3Forms response:', result);
 
       if (result.success) {
         btn.textContent = '✓ Message Sent!';
@@ -173,11 +187,13 @@ function initContactForm() {
         btn.style.opacity = '1';
         form.reset();
       } else {
-        btn.textContent = '✗ Failed to send';
+        console.error('Web3Forms error:', result.message);
+        btn.textContent = '✗ ' + (result.message || 'Failed to send');
         btn.style.background = '#ef4444';
         btn.style.opacity = '1';
       }
     } catch (error) {
+      console.error('Network error:', error);
       btn.textContent = '✗ Network error';
       btn.style.background = '#ef4444';
       btn.style.opacity = '1';
