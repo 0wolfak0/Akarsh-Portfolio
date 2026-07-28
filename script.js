@@ -91,7 +91,7 @@ function initTyping() {
   if (!el) return;
 
   const phrases = [
-    'Cybersecurity Student',
+    'Cybersecurity Graduate',
     'Aspiring Security Analyst',
     'LLM Security Researcher',
     'Ethical Hacking Enthusiast'
