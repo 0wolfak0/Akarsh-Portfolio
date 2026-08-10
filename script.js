@@ -1,4 +1,3 @@
-// ===== MATRIX RAIN BACKGROUND =====
 function initMatrix() {
   const canvas = document.getElementById('matrix-bg');
   if (!canvas) return;
@@ -41,7 +40,6 @@ function initMatrix() {
   draw();
 }
 
-// ===== NAVBAR SCROLL EFFECT =====
 function initNavbar() {
   const navbar = document.querySelector('.navbar');
   const hamburger = document.querySelector('.hamburger');
@@ -66,7 +64,6 @@ function initNavbar() {
     });
   });
 
-  // Active link highlighting on scroll
   const sections = document.querySelectorAll('.section, .hero');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -85,7 +82,6 @@ function initNavbar() {
   });
 }
 
-// ===== TYPING EFFECT =====
 function initTyping() {
   const el = document.getElementById('typed-text');
   if (!el) return;
@@ -129,7 +125,6 @@ function initTyping() {
   type();
 }
 
-// ===== SCROLL ANIMATIONS =====
 function initScrollAnimations() {
   const elements = document.querySelectorAll('.animate-on-scroll');
 
@@ -144,7 +139,7 @@ function initScrollAnimations() {
   elements.forEach(el => observer.observe(el));
 }
 
-// ===== CONTACT FORM =====
+
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -154,12 +149,10 @@ function initContactForm() {
     const btn = document.getElementById('contact-submit-btn');
     const originalText = btn.innerHTML;
 
-    // Show loading state
     btn.textContent = 'Sending...';
     btn.disabled = true;
     btn.style.opacity = '0.7';
 
-    // Collect form data as JSON (more reliable than FormData for CORS)
     const data = {
       access_key: form.querySelector('[name="access_key"]').value,
       subject: form.querySelector('[name="subject"]').value,
@@ -208,7 +201,6 @@ function initContactForm() {
   });
 }
 
-// ===== SMOOTH REVEAL FOR TERMINAL LINES =====
 function initTerminalReveal() {
   const lines = document.querySelectorAll('.terminal-line');
   lines.forEach((line, i) => {
@@ -233,7 +225,6 @@ function initTerminalReveal() {
   if (terminal) observer.observe(terminal);
 }
 
-// ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
   initMatrix();
   initNavbar();
