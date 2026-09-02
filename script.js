@@ -88,9 +88,9 @@ function initTyping() {
 
   const phrases = [
     'Cybersecurity Graduate',
-    'Aspiring Security Analyst',
+    'Aspiring SOC Analyst',
     'LLM Security Researcher',
-    'Ethical Hacking Enthusiast'
+    'Phishing Analysis Specialist'
   ];
 
   let phraseIndex = 0;
